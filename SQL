@@ -1,0 +1,28 @@
+PRODUCTS
+CREATE TABLE products
+(
+pid INT,
+pname VARCHAR(20),
+category VARCHAR(20),
+price MONEY,
+brand VARCHAR(20)
+)
+
+SELECT *FROM products
+WHERE price BETWEEN 15000 AND 50000
+
+INSERT INTO products VALUES('101','realme','mobiles',10000,'realme')
+
+
+=>
+
+ SELECT *FROM products
+WHERE category='mobiles'
+AND price < 20000
+AND brand IN('realme','xiomi','samsung')
+
+=>
+SELECT *FROM emp
+WHERE sal >20000
+AND hiredate > '2020-01-01'
+AND job NOT IN('manager','hr','engineer')

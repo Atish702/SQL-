@@ -14,15 +14,65 @@ WHERE price BETWEEN 15000 AND 50000
 INSERT INTO products VALUES('101','realme','mobiles',10000,'realme')
 
 
-=>
-
- SELECT *FROM products
+=>SELECT *FROM products
 WHERE category='mobiles'
 AND price < 20000
 AND brand IN('realme','xiomi','samsung')
 
-=>
-SELECT *FROM emp
+=>SELECT *FROM emp
 WHERE sal >20000
 AND hiredate > '2020-01-01'
 AND job NOT IN('manager','hr','engineer')
+
+
+=>>>> STUDENT2 TABLE
+CREATE TABLE products
+(
+sno INT,
+sname VARCHAR(20),
+math TINYINT,
+phy TINYINT,
+chem TINYINT,
+contact INT
+)
+SP_HELP STUDENT2
+
+SELECT *FROM STUDENT2
+
+
+INSERT INTO STUDENT2 VALUES('101','A',60,80,90,8802)
+INSERT INTO STUDENT2 VALUES('102','B',70,90,80,7678)
+INSERT INTO STUDENT2 VALUES('103','C',80,60,50,8178)
+INSERT INTO STUDENT2 VALUES('104','D',50,70,80,8448)
+INSERT INTO STUDENT2 VALUES('105','E',90,90,80,9818)
+
+=>>>/* LIKE, AND , WHERE condition applied
+SELECT *FROM STUDENT2
+WHERE math <90 AND PHY >70
+AND chem >50 AND  Contact LIKE '%s'
+
+/*  RESULT---102	B	70	90	80	7678
+
+
+=>>>>/*  ORDER BY clause
+SELECT *FROM STUDENT2
+ORDER BY math ASC
+
+/*   RESULT--- 104	D	50	70	80	8448
+101	A	60	80	90	8802
+102	B	70	90	80	7678
+103	C	80	60	50	8178
+105	E	90	90	80	9818
+
+/* to find average
+SELECT sno,sname,math,phy,chem,contact,(math+phy+chem)/3 as avg
+FROM STUDENT2
+ORDER BY (math+phy+chem)/3 ASC,math DESC, phy DESC
+
+
+
+
+
+
+
+
